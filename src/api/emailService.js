@@ -26,7 +26,9 @@ export async function submitEmails(emails) {
 // has something real to animate toward.
 export async function analyzeEmails(emails) {
   if (USE_MOCKS) {
-    await delay(600)
+    // Long enough for the AI Processing screen's step-by-step animation
+    // to play through naturally before we hand back results.
+    await delay(3400)
     return {
       opportunities: mockOpportunities,
       summary: { ...mockAnalysisSummary, emailsAnalyzed: emails?.length || mockAnalysisSummary.emailsAnalyzed },
