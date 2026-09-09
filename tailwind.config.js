@@ -49,6 +49,11 @@ export default {
       borderRadius: {
         xl2: '1.1rem',
       },
+      keyframes: {
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
+        },
+      },
     },
   },
   plugins: [],
