@@ -167,6 +167,10 @@ export const mockOpportunities = [
       'React and JavaScript match your listed skills',
       'On-site in Lahore, outside your stated Remote/Pakistan-only preference nuance',
     ],
+    gaps: [
+      { label: 'Node.js experience', yours: 'Not listed on your profile', required: 'Basic Node.js', met: false },
+      { label: 'Work format', yours: 'Remote / Pakistan preferred', required: 'On-site, Lahore', met: false },
+    ],
     actionChecklist: [
       { title: 'Update your CV', completed: false },
       { title: 'Prepare your GitHub/portfolio link', completed: false },
@@ -193,6 +197,10 @@ export const mockOpportunities = [
     reasons: [
       'Open to any undergraduate, which you satisfy',
       'Requires a faculty advisor letter — not currently reflected in your profile',
+    ],
+    gaps: [
+      { label: 'Faculty advisor letter', yours: 'Not on file', required: 'A signed advisor letter', met: false },
+      { label: 'Deadline pressure', yours: '31 days out', required: 'Lower urgency than your other matches', met: true },
     ],
     actionChecklist: [
       { title: 'Identify and confirm a faculty advisor', completed: false },
