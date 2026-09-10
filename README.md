@@ -1,16 +1,46 @@
-# React + Vite
+# Opportunity Inbox Copilot
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A premium, AI-powered opportunity intelligence platform for students — frontend only. Paste or upload a batch of
+emails, analyze them against your student profile, and get a ranked, explainable list of the internships,
+scholarships, competitions, and fellowships worth your attention.
 
-Currently, two official plugins are available:
+Built with React, Vite, Tailwind CSS, React Router, Axios, Lucide icons, and Framer Motion.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting started
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The app runs entirely on realistic mock data out of the box — no backend required to explore every screen.
 
-## Expanding the Oxlint configuration
+## Project structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```
+src/
+  api/          # Centralized Axios client + one service file per resource
+  components/   # layout / dashboard / profile / inbox / opportunities / common
+  context/      # Global app data (profile, opportunities, analysis state)
+  data/         # Mock profile, demo inbox emails, and ranked mock opportunities
+  pages/        # One file per route
+  utils/        # Date, urgency, and priority formatting helpers
+```
+
+## Connecting the real backend
+
+This frontend is fully API-ready for a FastAPI + MongoDB + Gemini backend.
+
+1. Copy `.env.example` to `.env` and set `VITE_API_BASE_URL` to your backend, e.g. `http://localhost:8000/api`.
+2. Open `src/api/client.js` and set `USE_MOCKS = false`.
+
+Every service file (`profileService.js`, `emailService.js`, `opportunityService.js`, `rankingService.js`) already
+calls through the shared Axios client with the exact endpoints the backend is expected to expose
+(`/profile`, `/emails`, `/emails/analyze`, `/opportunities`, `/ranking`, etc.) — no component code needs to change.
+
+## Notes
+
+- Profile and analysis results persist to `localStorage`/`sessionStorage` in mock mode so the demo feels real across
+  refreshes. Clear them anytime from **Settings → Reset local data**.
+- The "Load Demo Inbox" button (on the Opportunity Inbox page) populates 10 realistic sample emails — a mix of
+  genuine opportunities and noise — for a fast end-to-end demo.
