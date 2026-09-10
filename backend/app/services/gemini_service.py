@@ -8,28 +8,27 @@ import json
 import logging
 import re
 
-import google.generativeai as genai
+from google import genai
 
 from app.core.config import get_settings
 
 logger = logging.getLogger("opportunity_copilot.gemini")
 
-_configured = False
+_client: genai.Client | None = None
 
 
 class GeminiResponseError(Exception):
     """Raised when Gemini's response can't be parsed into usable JSON, even after a retry."""
 
 
-def _ensure_configured() -> None:
-    global _configured
-    if _configured:
-        return
-    settings = get_settings()
-    if not settings.gemini_api_key:
-        logger.warning("GEMINI_API_KEY is not set — Gemini calls will fail until it is configured.")
-    genai.configure(api_key=settings.gemini_api_key)
-    _configured = True
+def _get_client() -> genai.Client:
+    global _client
+    if _client is None:
+        settings = get_settings()
+        if not settings.gemini_api_key:
+            logger.warning("GEMINI_API_KEY is not set — Gemini calls will fail until it is configured.")
+        _client = genai.Client(api_key=settings.gemini_api_key)
+    return _client
 
 
 def _strip_markdown_fences(text: str) -> str:
@@ -41,7 +40,7 @@ def _strip_markdown_fences(text: str) -> str:
 
 
 def _parse_json_response(raw_text: str) -> dict:
-    cleaned = _strip_markdown_fences(raw_text)
+    cleaned = _strip_markdown_fences(raw_text or "")
     try:
         return json.loads(cleaned)
     except json.JSONDecodeError:
@@ -57,12 +56,11 @@ def _parse_json_response(raw_text: str) -> dict:
 
 async def generate_json(prompt: str, *, retry: bool = True) -> dict:
     """Sends a prompt to Gemini and returns the parsed JSON object it responds with."""
-    _ensure_configured()
     settings = get_settings()
-    model = genai.GenerativeModel(settings.gemini_model)
+    client = _get_client()
 
     try:
-        response = await model.generate_content_async(prompt)
+        response = await client.aio.models.generate_content(model=settings.gemini_model, contents=prompt)
         return _parse_json_response(response.text)
     except GeminiResponseError:
         if not retry:
@@ -70,7 +68,7 @@ async def generate_json(prompt: str, *, retry: bool = True) -> dict:
         logger.info("Retrying Gemini call once after a malformed JSON response.")
         try:
             retry_prompt = prompt + "\n\nReminder: respond with ONLY valid JSON, no markdown fences, no commentary."
-            response = await model.generate_content_async(retry_prompt)
+            response = await client.aio.models.generate_content(model=settings.gemini_model, contents=retry_prompt)
             return _parse_json_response(response.text)
         except GeminiResponseError:
             raise
