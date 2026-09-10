@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
 from app.core.database import connect_to_mongo, close_mongo_connection
+from app.routers import emails, opportunities, profile, ranking
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("opportunity_copilot")
@@ -46,6 +47,11 @@ def create_app() -> FastAPI:
     @app.get("/api/health", tags=["health"])
     async def health():
         return {"status": "healthy"}
+
+    app.include_router(profile.router)
+    app.include_router(emails.router)
+    app.include_router(opportunities.router)
+    app.include_router(ranking.router)
 
     return app
 

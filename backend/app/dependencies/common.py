@@ -1,4 +1,4 @@
-from fastapi import HTTPException, status
+from fastapi import Depends, HTTPException, status
 from motor.motor_asyncio import AsyncIOMotorDatabase
 
 from app.core.database import Collections, get_database
@@ -18,7 +18,7 @@ def serialize_doc(doc: dict) -> dict:
     return doc
 
 
-async def get_active_profile(db: AsyncIOMotorDatabase = None) -> dict:
+async def get_active_profile(db: AsyncIOMotorDatabase = Depends(get_db)) -> dict:
     """Returns the single most-recently-updated student profile.
 
     This MVP intentionally has no auth/multi-user support — there is one
