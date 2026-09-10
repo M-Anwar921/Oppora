@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
 from app.core.database import connect_to_mongo, close_mongo_connection
+from app.core.error_handlers import register_exception_handlers
 from app.routers import emails, opportunities, profile, ranking
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
@@ -52,6 +53,8 @@ def create_app() -> FastAPI:
     app.include_router(emails.router)
     app.include_router(opportunities.router)
     app.include_router(ranking.router)
+
+    register_exception_handlers(app)
 
     return app
 
