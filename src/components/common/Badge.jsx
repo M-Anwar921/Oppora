@@ -11,7 +11,7 @@ const TONE_STYLES = {
 export function Badge({ children, tone = 'neutral', className = '' }) {
   return (
     <span
-      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11.5px] font-medium tracking-wide ${TONE_STYLES[tone]} ${className}`}
+      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[13.2px] font-medium tracking-wide ${TONE_STYLES[tone]} ${className}`}
     >
       {children}
     </span>
@@ -38,7 +38,7 @@ export function PriorityBadge({ priority, className = '' }) {
 export function TypeBadge({ type, className = '' }) {
   return (
     <span
-      className={`inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-medium tracking-wide uppercase bg-base-surface text-ink-secondary ring-1 ring-base-border ${className}`}
+      className={`inline-flex items-center px-2.5 py-1 rounded-md text-[12.6px] font-medium tracking-wide uppercase bg-base-surface text-ink-secondary ring-1 ring-base-border ${className}`}
     >
       {type}
     </span>

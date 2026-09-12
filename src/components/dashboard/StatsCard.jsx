@@ -18,12 +18,12 @@ export default function StatsCard({ icon: Icon, value, label, trend, accent = 'i
     >
       <div className="flex items-start justify-between mb-4">
         <div className={`w-9 h-9 rounded-lg ${styles.bg} flex items-center justify-center`}>
-          <Icon size={17} strokeWidth={2} className={styles.text} />
+          <Icon size={20} strokeWidth={2} className={styles.text} />
         </div>
-        {trend && <span className="text-[11.5px] text-ink-tertiary">{trend}</span>}
+        {trend && <span className="text-[13.2px] text-ink-tertiary">{trend}</span>}
       </div>
-      <p className="text-[28px] font-semibold tracking-tight tabular leading-none">{value}</p>
-      <p className="text-[13px] text-ink-secondary mt-1.5">{label}</p>
+      <p className="text-[32.2px] font-semibold tracking-tight tabular leading-none">{value}</p>
+      <p className="text-[14.9px] text-ink-secondary mt-1.5">{label}</p>
     </motion.div>
   )
 }

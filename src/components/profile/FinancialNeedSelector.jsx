@@ -12,7 +12,7 @@ export default function FinancialNeedSelector({ value, onChange }) {
           key={opt.value}
           onClick={() => onChange(opt.value)}
           className={[
-            'px-4 py-2.5 rounded-xl text-[13.5px] ring-1 transition-colors',
+            'px-4 py-2.5 rounded-xl text-[15.5px] ring-1 transition-colors',
             value === opt.value
               ? 'bg-accent-indigo/12 ring-accent-indigo/40 text-ink-primary'
               : 'bg-base-surface ring-base-border text-ink-secondary hover:ring-base-borderStrong hover:text-ink-primary',

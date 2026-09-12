@@ -5,6 +5,7 @@
 @layer base {
   html {
     color-scheme: dark;
+    font-size: 18px;
   }
   body {
     @apply bg-base text-ink-primary font-sans antialiased;

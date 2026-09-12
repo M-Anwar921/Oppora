@@ -86,8 +86,8 @@ export default function ResultsPage() {
           [summary.urgentDeadlines, 'Urgent deadlines'],
         ].map(([value, label]) => (
           <div key={label} className="p-4 rounded-2xl bg-base-card ring-1 ring-base-border">
-            <p className="text-[20px] font-semibold tabular leading-none">{value}</p>
-            <p className="text-[12px] text-ink-secondary mt-1.5">{label}</p>
+            <p className="text-[23px] font-semibold tabular leading-none">{value}</p>
+            <p className="text-[13.8px] text-ink-secondary mt-1.5">{label}</p>
           </div>
         ))}
       </div>
@@ -102,7 +102,7 @@ export default function ResultsPage() {
           <select
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="appearance-none pl-3.5 pr-9 py-2.5 rounded-lg bg-base-surface ring-1 ring-base-border text-[13px] text-ink-primary outline-none focus:ring-accent-indigo/50"
+            className="appearance-none pl-3.5 pr-9 py-2.5 rounded-lg bg-base-surface ring-1 ring-base-border text-[14.9px] text-ink-primary outline-none focus:ring-accent-indigo/50"
           >
             {SORT_OPTIONS.map((s) => (
               <option key={s.id} value={s.id}>
@@ -110,7 +110,7 @@ export default function ResultsPage() {
               </option>
             ))}
           </select>
-          <ArrowUpDown size={13} className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-tertiary pointer-events-none" />
+          <ArrowUpDown size={15} className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-tertiary pointer-events-none" />
         </div>
       </div>
 

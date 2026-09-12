@@ -6,11 +6,11 @@ export default function InsightCard({ insight }) {
       <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-accent-cyan/10 blur-2xl" />
       <div className="flex items-start gap-3">
         <div className="w-8 h-8 rounded-lg bg-accent-indigo/15 flex items-center justify-center shrink-0">
-          <Sparkles size={15} className="text-accent-cyan" strokeWidth={2} />
+          <Sparkles size={17} className="text-accent-cyan" strokeWidth={2} />
         </div>
         <div>
-          <p className="text-[12.5px] font-medium text-ink-secondary mb-1.5">Opportunity insight</p>
-          <p className="text-[14px] text-ink-primary leading-relaxed">{insight}</p>
+          <p className="text-[14.4px] font-medium text-ink-secondary mb-1.5">Opportunity insight</p>
+          <p className="text-[16.1px] text-ink-primary leading-relaxed">{insight}</p>
         </div>
       </div>
     </div>

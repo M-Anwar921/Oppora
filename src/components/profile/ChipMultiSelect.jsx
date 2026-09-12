@@ -18,7 +18,7 @@ export default function ChipMultiSelect({ options, value, onChange, columns = 'w
             key={option}
             onClick={() => toggle(option)}
             className={[
-              'flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-[13.5px] transition-colors ring-1 text-left',
+              'flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-[15.5px] transition-colors ring-1 text-left',
               active
                 ? 'bg-accent-indigo/12 ring-accent-indigo/40 text-ink-primary'
                 : 'bg-base-surface ring-base-border text-ink-secondary hover:ring-base-borderStrong hover:text-ink-primary',
@@ -30,7 +30,7 @@ export default function ChipMultiSelect({ options, value, onChange, columns = 'w
                 active ? 'bg-accent-indigo ring-accent-indigo' : 'ring-base-borderStrong',
               ].join(' ')}
             >
-              {active && <Check size={11} className="text-white" strokeWidth={3} />}
+              {active && <Check size={13} className="text-white" strokeWidth={3} />}
             </span>
             {option}
           </button>

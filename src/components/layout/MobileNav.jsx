@@ -19,14 +19,14 @@ export default function MobileNav() {
             end={to === '/'}
             className={({ isActive }) =>
               [
-                'flex flex-col items-center gap-1 py-2.5 px-3 text-[11px] flex-1',
+                'flex flex-col items-center gap-1 py-2.5 px-3 text-[12.6px] flex-1',
                 isActive ? 'text-accent-cyan' : 'text-ink-tertiary',
               ].join(' ')
             }
           >
             {({ isActive }) => (
               <>
-                <Icon size={19} strokeWidth={isActive ? 2.4 : 2} />
+                <Icon size={22} strokeWidth={isActive ? 2.4 : 2} />
                 <span>{label}</span>
               </>
             )}

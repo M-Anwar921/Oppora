@@ -16,11 +16,11 @@ export default function Sidebar() {
     <aside className="hidden lg:flex lg:flex-col w-[260px] shrink-0 h-screen sticky top-0 border-r border-base-border bg-base-raised/60">
       <div className="flex items-center gap-2.5 px-6 h-20">
         <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-indigo to-accent-cyan flex items-center justify-center shadow-glow">
-          <Radar size={16} className="text-base" strokeWidth={2.5} />
+          <Radar size={18} className="text-base" strokeWidth={2.5} />
         </div>
         <div>
-          <p className="text-[13.5px] font-semibold leading-tight tracking-tight">Opportunity</p>
-          <p className="text-[13.5px] font-semibold leading-tight tracking-tight text-accent-cyan">Inbox Copilot</p>
+          <p className="text-[15.5px] font-semibold leading-tight tracking-tight">Opportunity</p>
+          <p className="text-[15.5px] font-semibold leading-tight tracking-tight text-accent-cyan">Inbox Copilot</p>
         </div>
       </div>
 
@@ -32,7 +32,7 @@ export default function Sidebar() {
             end={to === '/'}
             className={({ isActive }) =>
               [
-                'group flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-[14px] transition-colors',
+                'group flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-[16.1px] transition-colors',
                 isActive
                   ? 'bg-base-card text-ink-primary shadow-card ring-1 ring-base-borderStrong'
                   : 'text-ink-secondary hover:text-ink-primary hover:bg-base-card/60',
@@ -41,7 +41,7 @@ export default function Sidebar() {
           >
             {({ isActive }) => (
               <>
-                <Icon size={17} strokeWidth={2} className={isActive ? 'text-accent-cyan' : 'text-ink-tertiary group-hover:text-ink-secondary'} />
+                <Icon size={20} strokeWidth={2} className={isActive ? 'text-accent-cyan' : 'text-ink-tertiary group-hover:text-ink-secondary'} />
                 <span>{label}</span>
               </>
             )}
@@ -54,19 +54,19 @@ export default function Sidebar() {
           to="/settings"
           className={({ isActive }) =>
             [
-              'flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-[14px] transition-colors',
+              'flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-[16.1px] transition-colors',
               isActive ? 'bg-base-card text-ink-primary' : 'text-ink-secondary hover:text-ink-primary hover:bg-base-card/60',
             ].join(' ')
           }
         >
-          <Settings size={17} strokeWidth={2} className="text-ink-tertiary" />
+          <Settings size={20} strokeWidth={2} className="text-ink-tertiary" />
           <span>Settings</span>
         </NavLink>
 
         <NavLink to="/profile" className="block px-3.5 py-3 rounded-xl glass ring-1 ring-base-border hover:ring-base-borderStrong transition-shadow">
           <div className="flex items-center justify-between mb-1.5">
-            <p className="text-[12.5px] text-ink-secondary">Profile strength</p>
-            <p className="text-[12.5px] font-semibold text-accent-cyan tabular">{profileCompleteness}%</p>
+            <p className="text-[14.4px] text-ink-secondary">Profile strength</p>
+            <p className="text-[14.4px] font-semibold text-accent-cyan tabular">{profileCompleteness}%</p>
           </div>
           <div className="h-1.5 w-full rounded-full bg-base-surface overflow-hidden">
             <div
@@ -74,7 +74,7 @@ export default function Sidebar() {
               style={{ width: `${profileCompleteness}%` }}
             />
           </div>
-          <p className="text-[12px] text-ink-tertiary mt-2 truncate">{profile?.program || 'Complete your profile'}</p>
+          <p className="text-[13.8px] text-ink-tertiary mt-2 truncate">{profile?.program || 'Complete your profile'}</p>
         </NavLink>
       </div>
     </aside>

@@ -8,7 +8,7 @@ export default function FilterBar({ active, onChange }) {
           key={f}
           onClick={() => onChange(f)}
           className={[
-            'shrink-0 px-3.5 py-2 rounded-full text-[13px] font-medium ring-1 transition-colors whitespace-nowrap',
+            'shrink-0 px-3.5 py-2 rounded-full text-[14.9px] font-medium ring-1 transition-colors whitespace-nowrap',
             active === f
               ? 'bg-accent-indigo/15 ring-accent-indigo/40 text-ink-primary'
               : 'bg-base-surface ring-base-border text-ink-secondary hover:text-ink-primary hover:ring-base-borderStrong',

@@ -26,34 +26,34 @@ export default function OpportunityCard({ opportunity, rank, delay = 0 }) {
     >
       <div className="flex items-start justify-between gap-3 mb-3.5">
         <div className="flex items-center gap-2.5">
-          <span className="text-[13px] font-semibold text-ink-tertiary tabular">#{rank}</span>
+          <span className="text-[14.9px] font-semibold text-ink-tertiary tabular">#{rank}</span>
           <TypeBadge type={opportunity.type} />
         </div>
         <PriorityBadge priority={opportunity.priority} />
       </div>
 
-      <h3 className="text-[16px] font-semibold text-ink-primary leading-snug">{opportunity.title}</h3>
-      <p className="text-[13px] text-ink-secondary mt-1">{opportunity.organization}</p>
+      <h3 className="text-[18.4px] font-semibold text-ink-primary leading-snug">{opportunity.title}</h3>
+      <p className="text-[14.9px] text-ink-secondary mt-1">{opportunity.organization}</p>
 
       <div className="flex items-center gap-4 mt-4">
         <div>
-          <p className="text-[22px] font-semibold tabular leading-none">{opportunity.finalScore}</p>
-          <p className="text-[11px] text-ink-tertiary mt-0.5">/ 100 score</p>
+          <p className="text-[25.3px] font-semibold tabular leading-none">{opportunity.finalScore}</p>
+          <p className="text-[12.6px] text-ink-tertiary mt-0.5">/ 100 score</p>
         </div>
         <div className="w-px h-9 bg-base-border" />
         <div>
-          <p className={`text-[13px] font-medium tabular ${urgency.tone === 'critical' ? 'text-state-critical' : 'text-ink-primary'}`}>
+          <p className={`text-[14.9px] font-medium tabular ${urgency.tone === 'critical' ? 'text-state-critical' : 'text-ink-primary'}`}>
             {urgency.text}
           </p>
-          <p className="text-[11.5px] text-ink-tertiary mt-0.5">{formatDeadline(opportunity.deadline)}</p>
+          <p className="text-[13.2px] text-ink-tertiary mt-0.5">{formatDeadline(opportunity.deadline)}</p>
         </div>
       </div>
 
       {matches.length > 0 && (
         <div className="flex flex-wrap gap-x-3 gap-y-1.5 mt-4">
           {matches.map((m) => (
-            <span key={m} className="inline-flex items-center gap-1 text-[12px] text-state-success">
-              <CheckCircle2 size={12.5} strokeWidth={2.25} />
+            <span key={m} className="inline-flex items-center gap-1 text-[13.8px] text-state-success">
+              <CheckCircle2 size={14} strokeWidth={2.25} />
               {m}
             </span>
           ))}
@@ -62,9 +62,9 @@ export default function OpportunityCard({ opportunity, rank, delay = 0 }) {
 
       <Link
         to={`/opportunity/${opportunity.id}`}
-        className="inline-flex items-center gap-1.5 mt-5 text-[13px] font-medium text-accent-cyan hover:text-accent-cyan/80 transition-colors"
+        className="inline-flex items-center gap-1.5 mt-5 text-[14.9px] font-medium text-accent-cyan hover:text-accent-cyan/80 transition-colors"
       >
-        View Full Analysis <ArrowRight size={13} />
+        View Full Analysis <ArrowRight size={15} />
       </Link>
     </motion.div>
   )

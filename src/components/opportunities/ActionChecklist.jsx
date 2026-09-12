@@ -8,8 +8,8 @@ export default function ActionChecklist({ items, onToggle }) {
   return (
     <div className="p-6 rounded-2xl bg-base-card ring-1 ring-base-border">
       <div className="flex items-center justify-between mb-5">
-        <h3 className="text-[15px] font-semibold text-ink-primary">Your Action Plan</h3>
-        <span className="text-[13px] font-medium text-accent-cyan tabular">{percent}% complete</span>
+        <h3 className="text-[17.2px] font-semibold text-ink-primary">Your Action Plan</h3>
+        <span className="text-[14.9px] font-medium text-accent-cyan tabular">{percent}% complete</span>
       </div>
 
       <div className="h-1.5 rounded-full bg-base-surface overflow-hidden mb-6">
@@ -33,9 +33,9 @@ export default function ActionChecklist({ items, onToggle }) {
                 item.completed ? 'bg-state-success ring-state-success' : 'ring-base-borderStrong',
               ].join(' ')}
             >
-              {item.completed && <Check size={13} className="text-base" strokeWidth={3} />}
+              {item.completed && <Check size={15} className="text-base" strokeWidth={3} />}
             </span>
-            <span className={`text-[13.5px] ${item.completed ? 'text-ink-tertiary line-through' : 'text-ink-primary'}`}>
+            <span className={`text-[15.5px] ${item.completed ? 'text-ink-tertiary line-through' : 'text-ink-primary'}`}>
               {item.title}
             </span>
           </button>

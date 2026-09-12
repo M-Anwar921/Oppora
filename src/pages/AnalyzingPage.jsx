@@ -44,10 +44,10 @@ export default function AnalyzingPage() {
             transition={{ repeat: Infinity, duration: 3, ease: 'linear' }}
             className="w-16 h-16 rounded-2xl bg-base-card ring-1 ring-base-border flex items-center justify-center mb-6"
           >
-            <Radar size={26} className="text-accent-cyan" strokeWidth={1.5} />
+            <Radar size={30} className="text-accent-cyan" strokeWidth={1.5} />
           </motion.div>
-          <h1 className="text-[22px] font-semibold tracking-tight">Analyzing your inbox</h1>
-          <p className="text-[13.5px] text-ink-secondary mt-2">
+          <h1 className="text-[25.3px] font-semibold tracking-tight">Analyzing your inbox</h1>
+          <p className="text-[15.5px] text-ink-secondary mt-2">
             This usually takes a few seconds — we're reading closely so your rankings are accurate.
           </p>
         </div>

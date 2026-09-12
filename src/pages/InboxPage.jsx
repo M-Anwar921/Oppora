@@ -51,7 +51,7 @@ export default function InboxPage() {
             key={t.id}
             onClick={() => setTab(t.id)}
             className={[
-              'px-4 py-2 rounded-lg text-[13.5px] font-medium transition-colors',
+              'px-4 py-2 rounded-lg text-[15.5px] font-medium transition-colors',
               tab === t.id ? 'bg-base-card text-ink-primary shadow-card' : 'text-ink-secondary hover:text-ink-primary',
             ].join(' ')}
           >
@@ -63,14 +63,14 @@ export default function InboxPage() {
       {tab === 'paste' ? (
         <div>
           <div className="flex items-center justify-between mb-4">
-            <p className="text-[13px] text-ink-secondary tabular">
+            <p className="text-[14.9px] text-ink-secondary tabular">
               Emails added: {filledEmails.length} / {MAX_EMAILS}
             </p>
             <button
               onClick={loadDemo}
-              className="inline-flex items-center gap-1.5 text-[13px] text-accent-cyan hover:text-accent-cyan/80 transition-colors"
+              className="inline-flex items-center gap-1.5 text-[14.9px] text-accent-cyan hover:text-accent-cyan/80 transition-colors"
             >
-              <Wand2 size={14} /> Load Demo Inbox
+              <Wand2 size={16} /> Load Demo Inbox
             </button>
           </div>
 
@@ -90,9 +90,9 @@ export default function InboxPage() {
           {emails.length < MAX_EMAILS && (
             <button
               onClick={addEmail}
-              className="mt-4 w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl border border-dashed border-base-border hover:border-base-borderStrong text-[13.5px] text-ink-secondary hover:text-ink-primary transition-colors"
+              className="mt-4 w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl border border-dashed border-base-border hover:border-base-borderStrong text-[15.5px] text-ink-secondary hover:text-ink-primary transition-colors"
             >
-              <Plus size={15} /> Add Another Email
+              <Plus size={17} /> Add Another Email
             </button>
           )}
         </div>
@@ -101,9 +101,9 @@ export default function InboxPage() {
           <div className="flex justify-end mb-4">
             <button
               onClick={loadDemo}
-              className="inline-flex items-center gap-1.5 text-[13px] text-accent-cyan hover:text-accent-cyan/80 transition-colors"
+              className="inline-flex items-center gap-1.5 text-[14.9px] text-accent-cyan hover:text-accent-cyan/80 transition-colors"
             >
-              <Wand2 size={14} /> Load Demo Inbox
+              <Wand2 size={16} /> Load Demo Inbox
             </button>
           </div>
           <EmailUpload
@@ -116,7 +116,7 @@ export default function InboxPage() {
 
       <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-accent-indigo/10 via-base-card to-base-card ring-1 ring-accent-indigo/20 flex flex-col sm:flex-row items-center justify-between gap-5">
         <div>
-          <p className="text-[13px] text-ink-secondary">
+          <p className="text-[14.9px] text-ink-secondary">
             {readyCount < MIN_EMAILS
               ? `Add at least ${MIN_EMAILS} emails for the strongest analysis (${readyCount} ready).`
               : 'AI will identify opportunities, extract important details, and personalize your results.'}
@@ -125,9 +125,9 @@ export default function InboxPage() {
         <button
           onClick={handleAnalyze}
           disabled={readyCount === 0 || isAnalyzing}
-          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-accent-indigo hover:bg-accent-indigo/90 disabled:opacity-50 text-white text-[14.5px] font-medium shadow-glow transition-colors whitespace-nowrap"
+          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-accent-indigo hover:bg-accent-indigo/90 disabled:opacity-50 text-white text-[16.7px] font-medium shadow-glow transition-colors whitespace-nowrap"
         >
-          <Sparkles size={16} strokeWidth={2} />
+          <Sparkles size={18} strokeWidth={2} />
           Analyze Inbox with AI
         </button>
       </div>

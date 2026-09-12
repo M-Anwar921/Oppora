@@ -106,12 +106,12 @@ export default function ProfilePage() {
           whileTap={{ scale: 0.97 }}
           onClick={handleSave}
           disabled={saving}
-          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-accent-indigo hover:bg-accent-indigo/90 disabled:opacity-60 text-white text-[14px] font-medium shadow-glow transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-accent-indigo hover:bg-accent-indigo/90 disabled:opacity-60 text-white text-[16.1px] font-medium shadow-glow transition-colors"
         >
           <AnimatePresence mode="wait" initial={false}>
             {saved ? (
               <motion.span key="saved" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="inline-flex items-center gap-2">
-                <CheckCircle2 size={16} /> Profile saved
+                <CheckCircle2 size={18} /> Profile saved
               </motion.span>
             ) : (
               <motion.span key="save" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

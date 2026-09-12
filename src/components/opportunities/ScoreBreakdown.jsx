@@ -33,13 +33,13 @@ export default function ScoreBreakdown({ opportunity }) {
               </linearGradient>
             </defs>
           </svg>
-          <span className="absolute inset-0 flex items-center justify-center text-[24px] font-semibold tabular">
+          <span className="absolute inset-0 flex items-center justify-center text-[27.6px] font-semibold tabular">
             {opportunity.finalScore}
           </span>
         </div>
         <div>
-          <p className="text-[14.5px] font-semibold text-ink-primary">Overall Opportunity Score</p>
-          <p className="text-[13px] text-ink-secondary mt-1">
+          <p className="text-[16.7px] font-semibold text-ink-primary">Overall Opportunity Score</p>
+          <p className="text-[14.9px] text-ink-secondary mt-1">
             A weighted blend of how well this fits your profile, how urgent it is, and how complete the listing is.
           </p>
         </div>
@@ -49,10 +49,10 @@ export default function ScoreBreakdown({ opportunity }) {
         {ROWS.map((row) => (
           <div key={row.key}>
             <div className="flex items-center justify-between mb-1.5">
-              <span className="text-[13px] text-ink-secondary">
+              <span className="text-[14.9px] text-ink-secondary">
                 {row.label} <span className="text-ink-tertiary">· {row.weight}% weight</span>
               </span>
-              <span className="text-[13px] font-medium text-ink-primary tabular">{opportunity[row.key]} / 100</span>
+              <span className="text-[14.9px] font-medium text-ink-primary tabular">{opportunity[row.key]} / 100</span>
             </div>
             <div className="h-2 rounded-full bg-base-surface overflow-hidden">
               <motion.div

@@ -22,13 +22,13 @@ export default function ProfileCompletenessBar({ percent }) {
             </linearGradient>
           </defs>
         </svg>
-        <span className="absolute inset-0 flex items-center justify-center text-[13.5px] font-semibold tabular">
+        <span className="absolute inset-0 flex items-center justify-center text-[15.5px] font-semibold tabular">
           {percent}%
         </span>
       </div>
       <div>
-        <p className="text-[14.5px] font-semibold text-ink-primary">Profile completeness</p>
-        <p className="text-[13px] text-ink-secondary mt-1">
+        <p className="text-[16.7px] font-semibold text-ink-primary">Profile completeness</p>
+        <p className="text-[14.9px] text-ink-secondary mt-1">
           A more complete profile means sharper matching and more accurate opportunity scores.
         </p>
       </div>

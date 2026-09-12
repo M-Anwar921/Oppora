@@ -8,7 +8,7 @@ export default function DeadlineTimeline({ opportunities }) {
     .slice(0, 5)
 
   if (upcoming.length === 0) {
-    return <p className="text-[13.5px] text-ink-tertiary">No upcoming deadlines yet.</p>
+    return <p className="text-[15.5px] text-ink-tertiary">No upcoming deadlines yet.</p>
   }
 
   return (
@@ -25,10 +25,10 @@ export default function DeadlineTimeline({ opportunities }) {
                   urgent ? 'bg-state-critical' : 'bg-accent-blue'
                 }`}
               />
-              <p className="text-[13.5px] font-medium text-ink-primary group-hover:text-accent-cyan transition-colors truncate">
+              <p className="text-[15.5px] font-medium text-ink-primary group-hover:text-accent-cyan transition-colors truncate">
                 {o.title}
               </p>
-              <p className={`text-[12px] mt-0.5 tabular ${urgent ? 'text-state-critical' : 'text-ink-tertiary'}`}>
+              <p className={`text-[13.8px] mt-0.5 tabular ${urgent ? 'text-state-critical' : 'text-ink-tertiary'}`}>
                 {days === 0 ? 'Due today' : `${days} day${days === 1 ? '' : 's'} remaining`}
               </p>
             </Link>

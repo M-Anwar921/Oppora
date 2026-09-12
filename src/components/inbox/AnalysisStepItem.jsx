@@ -20,7 +20,7 @@ export default function AnalysisStepItem({ label, status, delay }) {
             : 'bg-base-surface ring-base-border',
         ].join(' ')}
       >
-        {status === 'done' && <Check size={13} className="text-state-success" strokeWidth={2.75} />}
+        {status === 'done' && <Check size={15} className="text-state-success" strokeWidth={2.75} />}
         {status === 'active' && (
           <motion.span
             className="w-2 h-2 rounded-full bg-accent-cyan"
@@ -29,7 +29,7 @@ export default function AnalysisStepItem({ label, status, delay }) {
           />
         )}
       </div>
-      <span className={`text-[14px] ${status === 'pending' ? 'text-ink-tertiary' : 'text-ink-primary'}`}>{label}</span>
+      <span className={`text-[16.1px] ${status === 'pending' ? 'text-ink-tertiary' : 'text-ink-primary'}`}>{label}</span>
     </motion.div>
   )
 }
